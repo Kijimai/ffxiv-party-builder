@@ -1,0 +1,130 @@
+:root {
+  --color-black: 0 0% 0%;
+  --color-white: 0 100% 100%;
+  --color-off-white: 0 0% 79%;
+  --color-grey-1: 0 0% 15%;
+  --color-grey-2: 0 0% 35%;
+  --color-grey-3: 0 0% 50%;
+  --color-primary-orange: 39 79% 54%;
+  --color-primary-purple: 292 58% 53%;
+  --default-font-size: 1.6rem;
+  --primary-font: "Poppins";
+  --sub-font: "Work Sans";
+}
+
+.dark-theme {
+  --color-thumb: var(--color-white);
+  --color-track: var(--color-black);
+  --color-page-background: var(--color-grey-1);
+  --color-text: var(--color-white);
+  --container-bg: var(--color-grey-2);
+  --color-primary: var(--color-primary-orange);
+  --nav-bg: var(--color-grey-2);
+  --project-link-bg: var(--color-grey-1);
+  --text-selection: var(--color-primary-orange);
+}
+
+.light-theme {
+  --color-thumb: var(--color-grey-1);
+  --color-track: var(--color-white);
+  --color-page-background: var(--color-white);
+  --color-text: var(--color-black);
+  --container-bg: var(--color-off-white);
+  --color-primary: var(--color-primary-purple);
+  --nav-bg: var(--color-off-white);
+  --project-link-bg: var(--color-white);
+  --text-selection: var(--color-primary-purple);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  /*Automatically inherits what is specified by on the later border-box*/
+}
+
+*::selection {
+  color: hsl(var(--color-white));
+  background-color: hsl(var(--text-selection));
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  background-color: hsl(var(--color-grey-2));
+  min-height: 150vh;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: hsl(var(--color-white));
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-black));
+}
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font), sans-serif;
+}
+
+.section {
+  padding-top: 3rem;
+}
+
+.inner-container {
+  margin: 0 auto 4rem;
+  width: 90%;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+textarea {
+  resize: none;
+}
+
+.navigator {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.navigator .nav_links {
+  gap: 2rem;
+  font-size: 2.6rem;
+}
+.form_container {
+  font-size: 2.6rem;
+}
+
+/*# sourceMappingURL=app.css.map */

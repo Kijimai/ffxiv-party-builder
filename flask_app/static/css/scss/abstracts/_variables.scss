@@ -1,0 +1,42 @@
+:root {
+  // Colors
+  --color-black: 0 0% 0%;
+  --color-white: 0 100% 100%;
+  --color-off-white: 0 0% 79%;
+
+  --color-grey-1: 0 0% 15%;
+  --color-grey-2: 0 0% 35%;
+  --color-grey-3: 0 0% 50%;
+
+  --color-primary-orange: 39 79% 54%;
+  --color-primary-purple: 292 58% 53%;
+
+  // Fonts
+  --default-font-size: 1.6rem;
+  --primary-font: "Poppins";
+  --sub-font: "Work Sans";
+}
+
+.dark-theme {
+  --color-thumb: var(--color-white);
+  --color-track: var(--color-black);
+  --color-page-background: var(--color-grey-1);
+  --color-text: var(--color-white);
+  --container-bg: var(--color-grey-2);
+  --color-primary: var(--color-primary-orange);
+  --nav-bg: var(--color-grey-2);
+  --project-link-bg: var(--color-grey-1);
+  --text-selection: var(--color-primary-orange);
+}
+
+.light-theme {
+  --color-thumb: var(--color-grey-1);
+  --color-track: var(--color-white);
+  --color-page-background: var(--color-white);
+  --color-text: var(--color-black);
+  --container-bg: var(--color-off-white);
+  --color-primary: var(--color-primary-purple);
+  --nav-bg: var(--color-off-white);
+  --project-link-bg: var(--color-white);
+  --text-selection: var(--color-primary-purple);
+}

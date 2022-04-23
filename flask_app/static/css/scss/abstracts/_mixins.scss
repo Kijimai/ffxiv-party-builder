@@ -1,0 +1,80 @@
+@mixin centerHorizontalVertical {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// @mixin responsive($breakpoint) {
+//   @if $breakpoint == 400 {
+//     @media only screen and (min-width: 25em) {
+//       @content;
+//     }
+//   }
+//   @if $breakpoint == 600 {
+//     //600px
+//     @media only screen and (min-width: 37.5em) {
+//       @content;
+//     }
+//   }
+
+//   @if $breakpoint == 768 {
+//     //600px
+//     @media only screen and (min-width: 37.5em) {
+//       @content;
+//     }
+//   }
+
+//   @if $breakpoint == 900 {
+//     //900px
+//     @media only screen and (min-width: 56.25em) {
+//       @content;
+//     }
+//   }
+//   @if $breakpoint == 1200 {
+//     //1200px
+//     @media only screen and (min-width: 75em) {
+//       @content;
+//     }
+//   }
+//   @if $breakpoint == 1800 {
+//     //1800px
+//     @media only screen and (min-width: 112.5em) {
+//       @content;
+//     }
+//   }
+// }
+
+// @mixin verticalResponsive($breakpoint) {
+//   @if $breakpoint == 280 {
+//     @media only screen and (max-height: 17.5em) and (max-width: 56.25em) {
+//       @content;
+//     }
+//   }
+
+//   @if $breakpoint == 414 {
+//     @media only screen and (max-height: 25.875em) and (max-width: 56.25em) {
+//       @content;
+//     }
+//   }
+// }
+
+// @mixin sectionHeaderStyle {
+//   position: relative;
+//   margin-bottom: 3rem;
+//   font-size: 3rem;
+//   text-align: center;
+//   color: hsl(var(--color-text));
+
+//   &::after {
+//     content: "";
+//     height: 0.5rem;
+//     width: 8rem;
+//     margin: 0 auto;
+//     background-color: hsl(var(--color-text));
+//     position: absolute;
+//     bottom: -0.8rem;
+//     left: 0;
+//     right: 0;
+//     border-radius: 1rem;
+//   }
+// }

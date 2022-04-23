@@ -1,0 +1,96 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: color 0.1s ease, background-color 0.2s ease;
+  /*Automatically inherits what is specified by on the later border-box*/
+}
+
+*::selection {
+  color: hsl(var(--color-white));
+  background-color: hsl(var(--text-selection));
+}
+
+html {
+  //this defines what 1rem is -- 10px
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  background-color: hsl(var(--color-grey-2));
+  min-height: 150vh;
+  // min-width: 28rem;
+}
+
+body::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: hsl(var(--color-white));
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(var(--color-black));
+}
+
+main {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font), sans-serif;
+}
+
+.section {
+  padding-top: 3rem;
+
+  // @include responsive(400) {
+  //   padding-top: 4rem;
+  // }
+
+  // @include responsive(900) {
+  //   padding-top: 8rem;
+  // }
+}
+
+.inner-container {
+  margin: 0 auto 4rem;
+  width: 90%;
+
+  // @include responsive(600) {
+  //   width: 80%;
+  // }
+
+  // @include responsive(900) {
+  //   width: 70%;
+  // }
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+textarea {
+  resize: none;
+}

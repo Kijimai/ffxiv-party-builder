@@ -1,0 +1,21 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "This app uses the FFXIV API",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass --watch flask_app/static/css/app.scss:flask_app/static/css/app.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kijimai/ffxiv-party-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kijimai/ffxiv-party-builder/issues"
+  },
+  "homepage": "https://github.com/Kijimai/ffxiv-party-builder#readme"
+}
