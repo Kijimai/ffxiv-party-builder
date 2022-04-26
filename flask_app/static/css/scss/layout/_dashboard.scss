@@ -7,6 +7,11 @@
   flex-basis: 30rem;
 }
 
+.full-party__member-container,
+.light-party__member-container {
+  position: relative;
+}
+
 .full-party {
   max-width: 60rem;
   grid-template-columns: repeat(2, minmax(20rem, 1fr));
@@ -17,7 +22,6 @@
   background-color: rgb(75, 212, 212);
 
   &__member-container {
-    position: relative;
     font-size: 1.6rem;
     color: hsl(var(--color-white));
     text-align: center;
@@ -32,7 +36,7 @@
 
   &__member-container-inner {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -71,7 +75,70 @@
 }
 
 .light-party {
-  grid-template-columns: minmax(20rem, 1fr);
+  min-width: 50rem;
+  flex-direction: column;
+  gap: 2rem;
   padding: 4rem;
   background-color: green;
+
+  &__member-container,
+  &__member-container-inner {
+    flex-direction: column;
+  }
+
+  &__member-container {
+    height: 10rem;
+    width: 100%;
+    font-size: 1.6rem;
+    color: hsl(var(--color-white));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__member-container-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    padding: 0 0.5rem;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.2s ease opacity;
+  }
+
+  &__member-name {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__member-container:hover &__member-container-inner {
+    opacity: 1;
+  }
+
+  &__link-container {
+    justify-content: center;
+    gap: 2rem;
+    .party-link {
+      font-family: sans-serif;
+      color: white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      white-space: nowrap;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+
+  &__avatar {
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 60%;
+  }
 }
