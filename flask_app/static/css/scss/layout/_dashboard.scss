@@ -1,0 +1,77 @@
+.dashboard-container {
+  gap: 2rem;
+}
+
+.full-party,
+.light-party {
+  flex-basis: 30rem;
+}
+
+.full-party {
+  max-width: 60rem;
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  grid-template-rows: repeat(4, 20rem);
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: rgb(75, 212, 212);
+
+  &__member-container {
+    position: relative;
+    font-size: 1.6rem;
+    color: hsl(var(--color-white));
+    text-align: center;
+    overflow: hidden;
+  }
+
+  &__avatar {
+    height: 100%;
+    width: 100%;
+    object-fit: cover\;;
+  }
+
+  &__member-container-inner {
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 4rem 2rem;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.2s ease opacity;
+  }
+
+  &__member-name {
+    user-select: none;
+    pointer-events: none;
+  }
+
+  &__member-container:hover &__member-container-inner {
+    opacity: 1;
+  }
+
+  &__link-container {
+    overflow: hidden;
+
+    .party-link {
+      font-family: sans-serif;
+      color: white;
+      text-decoration: none;
+      font-size: 1.4rem;
+      white-space: nowrap;
+
+      &:hover {
+        color: orange;
+      }
+    }
+  }
+}
+
+.light-party {
+  grid-template-columns: minmax(20rem, 1fr);
+  padding: 4rem;
+  background-color: green;
+}

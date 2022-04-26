@@ -8,6 +8,9 @@ werkzeug = "==2.0.3"
 flask = "==2.0.3"
 flask-bcrypt = "*"
 pymysql = "*"
+pyxivapi = "*"
+aiohttp = "*"
+asyncio = "*"
 
 [dev-packages]
 

@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  transition: color 0.1s ease, background-color 0.2s ease;
+  // transition: color 0.1s ease, background-color 0.2s ease;
   /*Automatically inherits what is specified by on the later border-box*/
 }
 
@@ -23,7 +23,7 @@ body {
   position: relative;
   box-sizing: border-box;
   background-color: hsl(var(--color-grey-2));
-  min-height: 150vh;
+  min-height: 100vh;
   // min-width: 28rem;
 }
 
@@ -97,4 +97,13 @@ h6 {
 
 textarea {
   resize: none;
+}
+
+.form-group {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+.form-group > * {
+  display: block;
 }

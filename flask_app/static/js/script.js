@@ -24,6 +24,7 @@ async function displayAvatar() {
 }
 
 async function listCharacters(character, server = "") {
+  isLoading = true
   if (isLoading) {
     displayUsers.innerHTML = `
       <div>
@@ -55,6 +56,7 @@ async function listCharacters(character, server = "") {
         return res.json()
       })
       .then((data) => {
+        console.log(data)
         console.log(data.Results)
         renderCharacters(data.Results)
       })
@@ -77,13 +79,19 @@ function renderCharacters(list) {
   list.map((character) => {
     output += `
       <div key='${character.ID}'>
-        <img src=${character.Avatar} alt=${character.Name} />
+        <img class="anime-image" src=${character.Avatar} alt=${character.Name} />
         <h2>${character.Name}</h2>
+        <a href="https://na.finalfantasyxiv.com/lodestone/character/${character.ID}/">Go to Character Page</a>
       </div>
     `
   })
   displayUsers.innerHTML = output
 }
+
+/* https://localhost:5000/show_one_anime/<int:id> */
+// def show_one_anime(id):
+// return render_template('show_one_anime.html', animeId={id})
+// <script src="show_one_anime.js"></script>
 
 charSearch.addEventListener("submit", (e) => {
   e.preventDefault()
@@ -100,3 +108,4 @@ charSearch.addEventListener("submit", (e) => {
 
 
 */
+

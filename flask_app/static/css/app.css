@@ -42,7 +42,6 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  transition: color 0.1s ease, background-color 0.2s ease;
   /*Automatically inherits what is specified by on the later border-box*/
 }
 
@@ -60,7 +59,7 @@ body {
   position: relative;
   box-sizing: border-box;
   background-color: hsl(var(--color-grey-2));
-  min-height: 150vh;
+  min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -78,6 +77,10 @@ body::-webkit-scrollbar-thumb {
 main {
   max-width: 70%;
   margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
 }
 
 ul,
@@ -115,6 +118,15 @@ textarea {
   resize: none;
 }
 
+.form-group {
+  font-size: 2rem;
+  font-family: sans-serif;
+}
+
+.form-group > * {
+  display: block;
+}
+
 .navigator {
   max-width: 70%;
   margin: 0 auto;
@@ -123,6 +135,114 @@ textarea {
   gap: 2rem;
   font-size: 2.6rem;
 }
+.main-welcome {
+  justify-content: center;
+}
+
+.welcome-container {
+  padding-top: 25vh;
+}
+
+.welcome-banner {
+  text-align: center;
+}
+.welcome-banner h1 {
+  font-size: 4rem;
+}
+.welcome-banner span {
+  font-family: sans-serif;
+  font-size: 3rem;
+}
+.welcome-banner__description {
+  font-family: sans-serif;
+  font-size: 2.4rem;
+  max-width: 70rem;
+}
+
+.main-login-register {
+  padding-top: 25vh;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.forms-container {
+  gap: 2rem;
+}
+.forms-container .form-heading {
+  font-size: 2.6rem;
+}
+
+.dashboard-container {
+  gap: 2rem;
+}
+
+.full-party,
+.light-party {
+  flex-basis: 30rem;
+}
+
+.full-party {
+  max-width: 60rem;
+  grid-template-columns: repeat(2, minmax(20rem, 1fr));
+  grid-template-rows: repeat(4, 20rem);
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+  background-color: #4bd4d4;
+}
+.full-party__member-container {
+  position: relative;
+  font-size: 1.6rem;
+  color: hsl(var(--color-white));
+  text-align: center;
+  overflow: hidden;
+}
+.full-party__avatar {
+  height: 100%;
+  width: 100%;
+  object-fit: cover\;;
+}
+.full-party__member-container-inner {
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 2rem;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.2s ease opacity;
+}
+.full-party__member-name {
+  user-select: none;
+  pointer-events: none;
+}
+.full-party__member-container:hover .full-party__member-container-inner {
+  opacity: 1;
+}
+.full-party__link-container {
+  overflow: hidden;
+}
+.full-party__link-container .party-link {
+  font-family: sans-serif;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+.full-party__link-container .party-link:hover {
+  color: orange;
+}
+
+.light-party {
+  grid-template-columns: minmax(20rem, 1fr);
+  padding: 4rem;
+  background-color: green;
+}
+
 .form_container {
   font-size: 2.6rem;
 }
