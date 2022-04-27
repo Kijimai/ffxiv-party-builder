@@ -1,0 +1,20 @@
+.single-character {
+  padding: 4rem;
+  border: 0.2rem solid black;
+  gap: 4rem;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  background-color: white;
+  
+  .job-icon {
+    height: 3rem;
+  }
+
+  &__image {
+    height: 40rem;
+  }
+
+  table {
+    text-align: center;
+  }
+}

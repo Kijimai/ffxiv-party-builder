@@ -45,11 +45,6 @@
   /*Automatically inherits what is specified by on the later border-box*/
 }
 
-*::selection {
-  color: hsl(var(--color-white));
-  background-color: hsl(var(--text-selection));
-}
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -303,6 +298,23 @@ textarea {
 
 .form_container {
   font-size: 2.6rem;
+}
+.single-character {
+  padding: 4rem;
+  border: 0.2rem solid black;
+  gap: 4rem;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  background-color: white;
+}
+.single-character .job-icon {
+  height: 3rem;
+}
+.single-character__image {
+  height: 40rem;
+}
+.single-character table {
+  text-align: center;
 }
 
 /*# sourceMappingURL=app.css.map */

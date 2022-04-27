@@ -8,10 +8,10 @@
   /*Automatically inherits what is specified by on the later border-box*/
 }
 
-*::selection {
-  color: hsl(var(--color-white));
-  background-color: hsl(var(--text-selection));
-}
+// *::selection {
+//   color: hsl(var(--color-white));
+//   background-color: hsl(var(--text-selection));
+// }
 
 html {
   //this defines what 1rem is -- 10px

@@ -15,7 +15,7 @@ callApi.addEventListener("click", displayAvatar)
 
 /* Adding extended=1 gives more info per request */
 async function displayAvatar() {
-  await fetch("https://xivapi.com/character/6091554?extended=1")
+  await fetch("https://xivapi.com/character/2684564?extended=1")
     .then((res) => res.json())
     .then((data) => {
       avatar.src = data.Character.Avatar
@@ -108,4 +108,3 @@ charSearch.addEventListener("submit", (e) => {
 
 
 */
-

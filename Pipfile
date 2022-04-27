@@ -11,6 +11,7 @@ pymysql = "*"
 pyxivapi = "*"
 aiohttp = "*"
 asyncio = "*"
+python-decouple = "*"
 
 [dev-packages]
 

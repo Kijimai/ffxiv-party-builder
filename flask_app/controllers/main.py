@@ -1,5 +1,6 @@
 from flask import render_template, redirect, request, session, flash
 from flask_app import app
+from flask_app import API_KEY
 import asyncio
 import logging
 import pyxivapi
@@ -8,6 +9,7 @@ import aiohttp
 from pyxivapi.models import Filter, Sort
 
 # import models here
+
 
 def fetchCharacter(id):
     return
@@ -39,6 +41,12 @@ def choose_character():
     return redirect('/dashboard')
 
 
-@app.route('/characters/<int:id>')
-def show_one_character(id):
-    return render_template('show_one_party_member.html', character=fetchCharacter(id))
+# todo: change up 1
+@app.route('/characters/1')
+def show_one_character():
+    return render_template('show_one_party_member.html', API_KEY=API_KEY)
+
+
+@app.route('/search_characters')
+def render_search_characters():
+    return render_template('search_characters.html')
