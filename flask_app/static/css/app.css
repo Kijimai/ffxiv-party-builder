@@ -299,6 +299,11 @@ textarea {
 .form_container {
   font-size: 2.6rem;
 }
+.search_results_container {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 5rem;
+}
+
 .single-character {
   padding: 4rem;
   border: 0.2rem solid black;
