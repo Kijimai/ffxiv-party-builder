@@ -18,13 +18,17 @@
           <li><a href="#">Search For Members</a></li>
           <li><a href="#">Logout</a></li>
         </ul>
-      </nav> 
+      </nav>
     </header>
     <main>
-      <div id="show-one-char">
-
-      </div>
+      <div id="show-one-char"></div>
     </main>
+
     <script src="../static/js/get_one_character.js"></script>
+    <script>
+      let char_id = {{characterID}}
+      console.log(char_id)
+      displayCharacter(char_id)
+    </script>
   </body>
 </html>

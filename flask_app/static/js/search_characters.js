@@ -53,6 +53,11 @@ async function searchCharacters(characterName, serverName = "") {
   isLoading = false
 }
 
+// TODO: Pagination
+// async function changePage() {
+
+// }
+
 function renderResults(list) {
   let output = ""
   const searchResults = document.getElementById("search_results_container")

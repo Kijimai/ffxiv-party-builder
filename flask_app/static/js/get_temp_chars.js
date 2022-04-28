@@ -32,7 +32,7 @@ function renderFullParty(list) {
       <div class="full-party__member-container-inner flex">
         <h3 class="full-party__member-name">${list[i].Name}</h3>
         <div class="full-party__link-container">
-          <a class="party-link" href="#">View Character</a>
+          <a class="party-link" href="/characters/${list[i].ID}">View Character</a>
           <a class="party-link" href="#">Change Character</a>
           <a class="party-link" href="#">Remove From Party</a>
         </div>

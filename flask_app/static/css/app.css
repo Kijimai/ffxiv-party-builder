@@ -305,6 +305,8 @@ textarea {
 }
 
 .single-character {
+  margin: 0 auto;
+  max-width: 70rem;
   padding: 4rem;
   border: 0.2rem solid black;
   gap: 4rem;
@@ -320,6 +322,15 @@ textarea {
 }
 .single-character table {
   text-align: center;
+}
+
+.error-container {
+  background-color: #e65a5a;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: sans-serif;
 }
 
 /*# sourceMappingURL=app.css.map */

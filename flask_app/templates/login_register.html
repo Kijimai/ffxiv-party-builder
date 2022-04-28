@@ -11,6 +11,12 @@
     <title>FFXIV Party Builder</title>
   </head>
   <body>
+    {% for message in
+    get_flashed_messages(category_filter="err_user_unauthorized")%}
+    <div class="error-container">
+      <p>{{message}}</p>
+    </div>
+    {% endfor %}
     <main class="flex main-login-register">
       <header class="welcome-banner">
         <span>Welcome to the</span>
@@ -22,7 +28,7 @@
         </p>
       </header>
       <div class="flex forms-container">
-        <form class="register-form" action="" method="POST">
+        <form class="register-form" action="/register_user" method="POST">
           <h2 class="form-heading">Register Account</h2>
           <div class="form-group">
             <label for="username">Username: </label>
@@ -42,13 +48,12 @@
           </div>
           <button>Register</button>
         </form>
-        <form class="login-form" action="" method="POST">
+        <form class="login-form" action="/login_user" method="POST">
           <h2 class="form-heading">Login to Account:</h2>
           <div class="form-group">
-            <label for="login_username">Username: </label>
-            <input type="text" id="login_username" name="username" />
+            <label for="login_email">Email: </label>
+            <input type="text" id="login_email" name="email" />
           </div>
-
           <div class="form-group">
             <label for="login_password">Password: </label>
             <input type="password" id="login_password" name="password" />
