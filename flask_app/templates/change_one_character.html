@@ -12,18 +12,25 @@
   </head>
   <body>
     <header>
+      <p>Welcome {{currentUser.username}}!</p>
       <nav class="navigator">
         <ul>
-          <li><a href="#">Change Character</a></li>
-          <li><a href="#">Search For Members</a></li>
-          <li><a href="#">Logout</a></li>
+          <li>
+            <a class="navigator__nav-link" href="/change_character"
+              >Change Character</a
+            >
+          </li>
+          <li>
+            <a class="navigator__nav-link" href="#">Search For Members</a>
+          </li>
+          <li><a class="navigator__nav-link" href="/logout">Logout</a></li>
         </ul>
       </nav>
     </header>
     <main>
-      <section class="change-one-character">
-        <div class="change-one-character__left">asd</div>
-        <div class="change-one-character__right">asd</div>
+      <section class="change-user-character">
+        <div class="change-user-character__left">asd</div>
+        <div class="change-user-character__right">asd</div>
       </section>
     </main>
   </body>

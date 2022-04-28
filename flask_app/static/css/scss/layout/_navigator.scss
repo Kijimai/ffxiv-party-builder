@@ -2,12 +2,12 @@
   max-width: 70%;
   margin: 0 auto;
 
-  .nav_links {
+  &__nav_links {
     gap: 2rem;
-    font-size: 2.6rem;
+  }
 
-    .nav_link {
-      // text-decoration: none;
-    }
+  &__nav-link {
+    text-decoration: none;
+    font-size: 2.6rem;
   }
 }

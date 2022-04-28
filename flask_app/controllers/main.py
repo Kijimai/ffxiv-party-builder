@@ -121,6 +121,11 @@ def show_one_character(id):
     return render_template('show_one_party_member.html', characterID=id)
 
 
+@app.route('/change_user_character')
+def render_change_user_char():
+    return render_template('change_user_character.html', currentUser=User.get_user({"id": session["id"]}))
+
+
 @app.route('/search_characters')
 def render_search_characters():
     return render_template('search_characters.html')
@@ -139,4 +144,8 @@ def update_user_character():
     print("************************")
     print('updating user character!')
     print("************************")
-    return request.form
+    data = {
+        **request.form
+    }
+    print(data)
+    return data
