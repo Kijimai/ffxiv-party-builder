@@ -1,4 +1,17 @@
 .change-user-character {
+  gap: 5rem;
+
+  .left {
+    flex-basis: 30%;
+  }
+
+  .right {
+    text-align: center;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    flex-basis: 70%;
+  }
+
   &__form {
     background-color: white;
     border: 0.2rem solid black;

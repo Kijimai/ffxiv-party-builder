@@ -122,6 +122,12 @@ textarea {
   display: block;
 }
 
+.btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+}
+
 .navigator {
   max-width: 70%;
   margin: 0 auto;
@@ -135,6 +141,8 @@ textarea {
 }
 
 .main-welcome {
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -166,10 +174,24 @@ textarea {
 }
 
 .forms-container {
-  gap: 2rem;
+  gap: 8rem;
+}
+.forms-container .register-form,
+.forms-container .login-form {
+  flex-basis: 40rem;
 }
 .forms-container .form-heading {
+  white-space: nowrap;
   font-size: 2.6rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 1rem;
 }
 
 .dashboard-container {
@@ -337,6 +359,18 @@ textarea {
   font-family: sans-serif;
 }
 
+.change-user-character {
+  gap: 5rem;
+}
+.change-user-character .left {
+  flex-basis: 30%;
+}
+.change-user-character .right {
+  text-align: center;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  flex-basis: 70%;
+}
 .change-user-character__form {
   background-color: white;
   border: 0.2rem solid black;

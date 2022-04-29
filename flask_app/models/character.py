@@ -1,5 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models.user import User
+from flask_app.models import user
 from flask import flash
 
 DATABASE = 'ffxiv_builder_schema'
@@ -26,4 +26,9 @@ class Character:
     @classmethod
     def save(cls, data):
         query = "INSERT INTO characters (character_id, character_name, character_race, character_title, character_bio, character_job, character_class, character_free_company, character_data_center, character_server, character_portrait_url, character_avatar_url, class_icon_url, job_icon_url) VALUES (%(character_id)s, %(character_name)s, %(character_race)s, %(character_title)s, %(character_bio)s, %(character_job)s, %(character_class)s, %(character_free_company)s, %(character_data_center)s, %(character_server)s, %(character_portrait_url)s, %(character_avatar_url)s, %(class_icon_url)s, %(job_icon_url)s);"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def save_with_userId(cls, data):
+        query = "INSERT INTO characters (character_id, character_name, character_race, character_title, character_bio, character_job, character_class, character_free_company, character_data_center, character_server, character_portrait_url, character_avatar_url, class_icon_url, job_icon_url, user_id) VALUES (%(character_id)s, %(character_name)s, %(character_race)s, %(character_title)s, %(character_bio)s, %(character_job)s, %(character_class)s, %(character_free_company)s, %(character_data_center)s, %(character_server)s, %(character_portrait_url)s, %(character_avatar_url)s, %(class_icon_url)s, %(job_icon_url)s, %(user_id)s);"
         return connectToMySQL(DATABASE).query_db(query, data)

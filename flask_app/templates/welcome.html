@@ -16,7 +16,7 @@
         <h1>Welcome to FFXIV Party Builder!</h1>
         <p>I see this is your first time logging in...</p>
         <p>Let's go look for your character!</p>
-        <form action="/welcome_character" method="POST">
+        <form id="welcome-form">
           <div class="form-group">
             <label for="character_name"></label>
             <input id="character_name" type="text" name="character_name" />
@@ -110,6 +110,8 @@
           <button>Search</button>
         </form>
       </section>
+      <div class="search-results-container grid" id="search_results"></div>
     </main>
+    <script src="../static/js/welcome.js"></script>
   </body>
 </html>

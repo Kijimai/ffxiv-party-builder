@@ -2,7 +2,7 @@ let isLoading = false
 
 async function getTempChars() {
   isLoading = true
-  await fetch("https://xivapi.com/character/search?name=Kawaii")
+  await fetch("https://xivapi.com/character/search?name=Pizza")
     .then((res) => res.json())
     .then((data) => {
       console.log(data.Results)
@@ -58,7 +58,7 @@ function renderLightParty(list) {
       <div class="light-party__member-container-inner flex">
         <h3 class="light-party__member-name">${list[i].Name}</h3>
         <div class="light-party__link-container flex">
-          <a class="party-link" href="#">View Character</a>
+          <a class="party-link" href="/characters/${list[i].ID}">View Character</a>
           <a class="party-link" href="#">Change Character</a>
           <a class="party-link" href="#">Remove From Party</a>
         </div>

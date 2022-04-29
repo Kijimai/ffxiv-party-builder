@@ -72,6 +72,7 @@ function renderOneCharacter(charInfo) {
           <td>${Server}</td>
         </tr>
       </table>
+
       <form class="add_to_party" action="/add_to_party" method="POST">
         <input type="hidden" value="${ID}" name="character_id" />
         <input type="hidden" value="${CharName}" name="character_name" />
@@ -91,6 +92,7 @@ function renderOneCharacter(charInfo) {
         <input type="hidden" value="${JobIcon}" name="job_icon_url" />
         <button>Add To Party</button>
       </form>
+      
       <form class="" action="/update_user_character" method="POST">
         <input type="hidden" value="${ID}" name="character_id" />
         <input type="hidden" value="${CharName}" name="character_name" />

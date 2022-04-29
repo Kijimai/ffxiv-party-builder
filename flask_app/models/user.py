@@ -1,6 +1,7 @@
 import re
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash, session
+from flask_app.models import character
 DATABASE = 'ffxiv_builder_schema'
 
 
@@ -17,13 +18,13 @@ class User:
         self.password = db_data['password']
         self.created_at = db_data['created_at']
         self.updated_at = db_data['updated_at']
-        self.player_character = []
         self.party_members = []
+        self.light_party_members = []
         User.all_users.append(self)
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO users ( username, email, password, created_at, updated_at ) VALUES (%(username)s, %(email)s, %(password)s, NOW(), NOW());"
+        query = "INSERT INTO users ( username, email, password, created_at, updated_at ) VALUES ( %(username)s, %(email)s, %(password)s, NOW(), NOW());"
         return connectToMySQL(DATABASE).query_db(query, data)
 
     @classmethod
@@ -42,6 +43,49 @@ class User:
         return cls(result[0])
 
     @classmethod
+    def add_character_to_full_party(cls, data):
+        query = "INSERT INTO full_parties (user_id, character_id) VALUES(%(user_id)s, %(character_id)s);"
+        return connectToMySQL(DATABASE).query_db(query, data)
+
+    @classmethod
+    def find_player_character(cls, data):
+        query = "SELECT * FROM characters where user_id = users.id;"
+        result = connectToMySQL(DATABASE).query_db(query, data)
+        return
+
+    @classmethod
+    def get_full_party_info(cls, data):
+        query = "SELECT * FROM users LEFT JOIN full_parties ON users.id = full_parties.user_id LEFT JOIN characters ON characters.id = full_parties.character_id WHERE users.id = %(id)s;"
+        results = connectToMySQL(DATABASE).query_db(query, data)
+
+        user = cls(results[0])
+
+        for row in results:
+            if row['characters.id'] == None:
+                break
+
+            data = {
+                "id": row['characters.id'],
+                "character_id": row['character_id'],
+                "character_name": row['character_name'],
+                "character_race": row['character_race'],
+                "character_title": row['character_title'],
+                "character_bio": row['character_bio'],
+                "character_job": row['character_job'],
+                "character_class": row['character_class'],
+                "character_free_company": row['character_free_company'],
+                "character_data_center": row['character_data_center'],
+                "character_server": row['character_server'],
+                "character_portrait_url": row['character_portrait_url'],
+                "character_avatar_url": row['character_avatar_url'],
+                "class_icon_url": row['class_icon_url'],
+                "job_icon_url": row['job_icon_url'],
+            }
+
+            user.party_members.append(character.Character(data))
+        return user
+
+    @classmethod
     def validate_unique_email(cls, data):
         print('Running unique email validation...')
         query = "SELECT * FROM users WHERE users.email = %(email)s"
@@ -53,12 +97,12 @@ class User:
             is_valid = False
         return is_valid
 
-
-    # @classmethod
-    # def check_if_user_exists(cls, data):
-    #     print("Running user checker...")
-    #     query = "SELECT * FROM users WHERE id = %(id)s;"
-
+    @classmethod
+    def check_user_party_size(cls, data):
+        query = "SELECT * from USERS LEFT JOIN full_parties ON users.id = full_parties.character_id LEFT JOIN characters ON characters.id = user_id WHERE users.id = %(id)s"
+        results = connectToMySQL(DATABASE).query_db(query, data)
+        print(results)
+        return results
 
     @staticmethod
     def validate_email(form_data: dict):
@@ -86,27 +130,3 @@ class User:
                   'err_user_register_password')
             is_valid = False
         return is_valid
-
-    # @classmethod
-    # def get_user_with_sighting(cls, data):
-    #     query = "SELECT posts.id, users.first_name, users.last_name, description, date_of_sighting, location, num_of_sasquatch FROM posts LEFT JOIN users ON posts.user_id = users.id WHERE posts.id = %(id)s"
-    #     results = connectToMySQL(DATABASE).query_db(query, data)[0]
-    #     if not results:
-    #         return []
-
-    #     # for row in results:
-    #     #     if not results:
-    #     #         break
-
-    #     #     print(row)
-    #     #     data = {
-    #     #         "date_of_sighting": row["date_of_sighting"],
-    #     #         "description": row["description"],
-    #     #         "first_name": row["first_name"],
-    #     #         "last_name": row["last_name"],
-    #     #         "location": row["location"],
-    #     #         "num_of_sasquatch": row["num_of_sasquatch"]
-    #     #     }
-    #     #     User.posts.append(data)
-    #     # print(type(results))
-    #     return results

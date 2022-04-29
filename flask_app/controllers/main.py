@@ -102,12 +102,20 @@ def render_dashboard():
 
 @app.route('/welcome')
 def render_welcome():
+    if not session.get('id'):
+        flash('You do not have permission to access this page!',
+              'err_user_unauthorized')
+        return redirect('/')
     return render_template('welcome.html')
 
 
 @app.route('/welcome_character', methods=['POST'])
 def choose_character():
-    print(request.form)
+    data = {
+        **request.form,
+        "user_id": session['id']
+    }
+    Character.save_with_userId(data)
     return redirect('/dashboard')
 
 
@@ -118,6 +126,7 @@ def choose_character():
 
 @app.route('/characters/<int:id>')
 def show_one_character(id):
+
     return render_template('show_one_party_member.html', characterID=id)
 
 
@@ -133,9 +142,11 @@ def render_search_characters():
 
 @app.route('/add_to_party', methods=["POST"])
 def add_to_party():
-    print(request.form)
-    id = Character.save(request.form)
-    print(id)
+    data = {
+        **request.form,
+        "user_id": session['id']
+    }
+    Character.save_with_userId(data)
     return redirect('/dashboard')
 
 

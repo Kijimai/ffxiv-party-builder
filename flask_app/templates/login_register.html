@@ -22,9 +22,15 @@
         <span>Welcome to the</span>
         <h1>FFXIV Party Builder App</h1>
         <p class="welcome-banner__description">
-          This app uses the <a href="https://xivapi.com/">XIVAPI</a> REST API,
-          allowing users to create their dream team for both light(4-person) and
-          full(8-person) parties.
+          This app uses the
+          <a
+            target="_blank"
+            rel="noreferrer noopener"
+            href="https://xivapi.com/"
+            >XIVAPI</a
+          >
+          REST API, allowing users to create their dream team for both
+          light(4-person) and full(8-person) parties.
         </p>
       </header>
       <div class="flex forms-container">
@@ -46,7 +52,7 @@
             <label for="confirm_pw">Confirm Password: </label>
             <input type="password" id="confirm_pw" name="confirm_pw" />
           </div>
-          <button>Register</button>
+          <button class="btn">Register</button>
         </form>
         <form class="login-form" action="/login_user" method="POST">
           <h2 class="form-heading">Login to Account:</h2>
@@ -58,7 +64,7 @@
             <label for="login_password">Password: </label>
             <input type="password" id="login_password" name="password" />
           </div>
-          <button>Login</button>
+          <button class="btn">Login</button>
         </form>
       </div>
     </main>
